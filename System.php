@@ -72,7 +72,9 @@ abstract class System
     }
 
     /**
-     *  Get Logger object for *LoggerTrait
+     *  Get Logger object 
+     * Example:
+     * `return static::$container['logger'];`
      *
      * @return Logger
      */
