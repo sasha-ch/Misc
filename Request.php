@@ -5,6 +5,9 @@ namespace app\components\web;
 /**
  * @inheritdoc
  * Dots to underline in $_GET replacing hack
+ * В соответствии с http://php.net/manual/ru/language.variables.external.php:
+ * Точки и пробелы в именах переменных преобразуется в знаки подчеркивания. Например, <input name="a.b" /> станет $_REQUEST["a_b"]. 
+ * Если хочется использовать имена с точками как есть - см. код ниже.
  */
 class Request extends \yii\web\Request
 {
