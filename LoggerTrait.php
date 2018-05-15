@@ -1,11 +1,8 @@
 <?php
 
-namespace Common\Log;
-
 /**
  * Trait LoggerTrait
  *
- * @package Common\Log
  * @author sasha-ch
  *
  * Краткие алиасы функций логирования PSR Logger
@@ -19,7 +16,7 @@ trait LoggerTrait {
 
     abstract public function getLogger();
 
-    //dark magic
+    //dark magic here
     private function _log($arguments)
     {
         $deep = 3;
