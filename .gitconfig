@@ -1,0 +1,65 @@
+[user]
+	email = test@example.com
+	name = Alex
+[core]
+	sharedRepository = true
+	fileMode = false
+	autocrlf = input
+	pager = cat
+	whitespace = -blank-at-eol,-space-before-tab,-trailing-space
+	hooksPath = /home/alex/.git_hooks/hooks
+[color]
+	ui = true
+[help]
+	autocorrect = 1
+[apply]
+	whitespace = nowarn
+[diff]
+	suppressBlankEmpty = true
+[alias]
+st = status
+ci = commit
+cim = commit -m
+cia = commit -a
+ciam = commit -am
+cimd = commit --amend -C HEAD
+amend = commit --amend -C HEAD
+br = symbolic-ref --short HEAD
+bra = branch -a
+brd = branch -D
+brc = branch
+co = checkout
+com = checkout master
+cod = checkout develop
+cob = checkout -b
+lg = log -15 --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cd) %C(bold blue)<%an>%Creset' --abbrev-commit --date=short
+lgs = log --stat -15 --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cd) %C(bold blue)<%an>%Creset' --abbrev-commit --date=short
+lol = log -15 --color --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cd) %C(bold blue)<%an>%Creset' --abbrev-commit --date=short
+lgsm = log --stat -15 --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cd) %C(bold blue)<%an>%Creset' --abbrev-commit --date=short master..
+lgm = log -15 --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cd) %C(bold blue)<%an>%Creset' --abbrev-commit --date=short master..
+parents = log --pretty=%p -n 1 --abbrev-commit
+ls = ls-files
+crpk = cherry-pick
+crp = cherry-pick
+me = merge -Xignore-all-space
+mergex = merge --no-commit -Xignore-all-space
+diffc = diff --color-words --abbrev -b -w
+cdiff = diff --color-words --abbrev -b -w
+df = diff --color-words --abbrev -b -w
+dfc = diff --color-words --abbrev -b -w --cached
+dfs = diff --color-words --abbrev -b -w --stat
+dc = diff --cached
+pushm = push origin master --tags
+pusho = push origin
+pushc = push origin HEAD
+fe = fetch -p
+fef = fetch -a -p origin
+pullo = pull origin
+bl = blame -C -w
+ada = add -A
+dropcache = reset HEAD .
+undoci = reset --soft HEAD^
+[fetch]
+	prune = true
+[pull]
+	ff = only
