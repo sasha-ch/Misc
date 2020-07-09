@@ -3,14 +3,14 @@
 /**
  * Trait LoggerTrait
  *
- * @author sasha-ch
  *
  * Краткие алиасы функций логирования PSR Logger
  *         - делаем use в базовом классе
  *         - вызываем $this->info(<message string>, <params>) , как в PSR
  *         - вызывающий __METHOD__ добавляется перед <message string>
  */
-trait LoggerTrait {
+trait LoggerTrait
+{
 
     protected $srcClassShortName = true;
 
@@ -26,12 +26,12 @@ trait LoggerTrait {
         //$arguments = $dbt[1]['args'];
 
         $srcClass = $dbt[2]['class'];
-        if($this->srcClassShortName){
+        if ($this->srcClassShortName) {
             $srcClass = substr(strrchr($srcClass, '\\'), 1);
         }
         $srcFunc = $dbt[2]['function'];
 
-        $arguments[0] = $srcClass .'::'. $srcFunc .' '. $arguments[0];
+        $arguments[0] = $srcClass . '::' . $srcFunc . ' ' . $arguments[0];
 
         return call_user_func_array([$this->getLogger(), $logFn], $arguments);
     }

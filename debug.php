@@ -1,10 +1,13 @@
 <?php
 
-/* Test, debug, temporary functions */
+/**
+ * Test, debug, temporary functions
+ */
 
 /**
  * print_r alias. Allow multiple args of any type
  * TODO: $return var
+ *
  * @param $v var to print_r
  */
 function pr($v)
@@ -16,15 +19,16 @@ function pr($v)
             ob_start();
             var_dump($arg);
             $str = ob_get_clean();
-            $msg .= $str."\n";
-        } else
-            $msg .= print_r($arg, true)."\n";
+            $msg .= $str . "\n";
+        } else {
+            $msg .= print_r($arg, true) . "\n";
+        }
     }
     if (php_sapi_name() !== 'cli') {
         $msg = '<pre>' . "\n" . $msg . '</pre>' . "\n";
     }
 
-    echo $msg."\n";
+    echo $msg . "\n";
 }
 
 function dpr($v)
@@ -53,21 +57,26 @@ function we($v)
 
 /**
  * Print 2D-array as table
+ *
  * @param $in
  * @param $ha
+ *
  * @return string
  */
 function tpr($in, $ha)
 {
-    if (empty($ha))
+    if (empty($ha)) {
         $ha = array_keys(current($in));
-    foreach ($ha as $v)
+    }
+    foreach ($ha as $v) {
         $h .= "<th>$v</th>";
-    $ss = array();
+    }
+    $ss = [];
     foreach ($in as $k => $l) {
         foreach ($l as $v) {
-            if (empty($v))
+            if (empty($v)) {
                 $v = '&nbsp;';
+            }
             $ss[$k] .= "<td>$v</td>";
         }
     }
@@ -81,6 +90,7 @@ function tpr($in, $ha)
 
 /**
  * pretty formatted xml string output
+ *
  * @param $xml
  */
 function pr_xml($xml)
